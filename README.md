@@ -12,6 +12,8 @@ The solution: you state a desire — *"play basketball Thursday at 6pm"* —
 and Nexus forms a micro-event: a pod of 4–6 compatible people, a place,
 and a time. No swiping, no organising, no awkward silences.
 
+**Live demo:** https://rallyo-ucffapphfezeyntjoxtcqks.streamlit.app/
+
 ## What this MVP does
 
 The core of the product is the **matching engine** (`rallyo/`), built from
