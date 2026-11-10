@@ -28,7 +28,7 @@ the project's strategy documents:
 | **Balanced pods** | Every pod needs a "spark" (≥ 1 member with extraversion ≥ 6/10) and an "icebreaker" (an interest shared by ≥ 2 members) |
 | **Min. 4, max. 6 per pod** | Fewer than 4 goes to the waitlist — a pod of 2–3 is a date, not a Rallyo pod |
 | **Field assignment** | The pod is sent to a municipal field that supports the sport, ideally in the members' neighbourhood |
-| **Match immédiat** | One click finds you a pod with an open seat for your sport and slot |
+| **Instant match** | One click finds you a pod with an open seat for your sport and slot |
 | **Continuous learning** | Quick post-outing feedback (1–5 stars) builds affinity with the people you played with, shaping your next matches |
 
 ## Try it
@@ -90,7 +90,7 @@ and the Streamlit demo is the fastest way to try them.
 ## Roadmap
 
 - Live field availability from the City of Montréal's open data
-- Real user accounts + the 3-park hyper-local launch (HEC Montréal)
+- Real user accounts + the hyper-local launch (HEC Montréal), starting with 3 parks (demo data covers 6 municipal fields)
 - Feedback-driven profile learning at scale
 - B2B2C: licences for student associations and universities
 - B2G: anonymised usage dashboard for the City
