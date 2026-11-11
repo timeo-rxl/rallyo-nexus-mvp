@@ -1,6 +1,8 @@
-# rallyo-nexus-mvp
+# Rallyo — Arrête de scroller. Va jouer.
 
-**Rallyo (Nexus)** — the AI-powered social orchestrator for students.
+**Live demo:** https://rallyo-montreal.lovable.app
+
+Rallyo (Nexus) — the social sports orchestrator for students.
 3rd place, 54H Start-Up (HEC Montréal).
 
 The problem: students are hyper-connected and still isolated. Finding
@@ -9,15 +11,12 @@ so much organising that most people just stay home. Meanwhile, Montréal's
 municipal fields (soccer, basketball, tennis) sit empty.
 
 The solution: you state a desire — *"play basketball Thursday at 6pm"* —
-and Nexus forms a micro-event: a pod of 4–6 compatible people, a place,
+and Rallyo forms a micro-event: a pod of 4–6 compatible people, a place,
 and a time. No swiping, no organising, no awkward silences.
 
-**Live demo:** https://rallyo-ucffapphfezeyntjoxtcqks.streamlit.app/
+## What this app does
 
-## What this MVP does
-
-The core of the product is the **matching engine** (`rallyo/`), built from
-the project's strategy documents:
+The core of the product is the **matching engine** (`src/lib/matching.ts`):
 
 | Rule | How it works |
 | --- | --- |
@@ -31,37 +30,18 @@ the project's strategy documents:
 | **Instant match** | One click finds you a pod with an open seat for your sport and slot |
 | **Continuous learning** | Quick post-outing feedback (1–5 stars) builds affinity with the people you played with, shaping your next matches |
 
+Pages: **Accueil** (hero, problem, how it works, this week's pods),
+**Trouve ton pod** (onboarding + instant match with a full score
+breakdown), **Pods de la semaine**, **Liste d'attente**, **Profil**
+(saved in localStorage).
+
 ## Try it
 
 ```bash
-pip install -r requirements.txt
-
-# Command-line demo (sample cohort of 18 HEC students)
-python demo.py
-
-# Interactive demo
-streamlit run app.py
-
-# Tests (19 tests)
-python -m unittest discover -s tests -v
-```
-
-Or deploy the demo free on [Streamlit Community Cloud](https://streamlit.io/cloud)
-— point it at `app.py`.
-
-## Project structure
-
-```
-rallyo-nexus-mvp/
-├── rallyo/
-│   ├── models.py      # Student, Field, Pod
-│   ├── matching.py    # compatibility score, pod formation, fields,
-│   │                  # instant match, feedback learning
-│   └── data.py        # demo cohort + demo fields
-├── app.py             # Streamlit demo — find your pod in 3 clicks
-├── demo.py            # CLI demo
-└── tests/
-    └── test_matching.py
+npm install
+npm run dev     # local dev server
+npm test        # vitest — matching engine + routing
+npm run build   # production build
 ```
 
 ## Demo data — read this
@@ -71,21 +51,17 @@ Students are **fictional**. Fields use **real Montréal park names** with
 source. Real availability would come from the City of Montréal's open
 data (see roadmap).
 
-## Product & design — the Lovable apps
+## Tech
 
-The product already exists as UI in Lovable (workspace "Melanie's Lovable"):
+React + Vite + Tailwind CSS + shadcn/ui + TanStack Router. No backend,
+no auth in this version: state lives in localStorage.
 
-- **Rallyo Connect** — the landing site: *"Arrête de scroller. Va jouer."*
-  Hero, Problem, How it works, Vision, beta signup. The pitch, in one page.
-- **Connect & Thrive** — the working web app: landing page + app
-  (browse games, create a game, game detail, profile).
-- **Rally Sports Hub** — the mobile-style app shell: game cards, filters,
-  bottom navigation, create game, profile.
+## History
 
-Those three are the **interface**. This repository is the **brain** they
-were missing: none of them implements a real matching algorithm — the
-pods, the compatibility score and the field assignment live here, tested,
-and the Streamlit demo is the fastest way to try them.
+The matching engine was first built and tested in Python (19 tests) with
+a Streamlit demo; the full history is in the git log. The current app is
+a complete rebuild (Lovable, November 2026) that ports the engine to
+TypeScript and ships it as a real product interface.
 
 ## Roadmap
 
