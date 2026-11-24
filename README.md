@@ -2,6 +2,8 @@
 
 **Live demo:** https://rallyo-montreal.lovable.app
 
+**Landing page:** https://rallyo-landing.vercel.app ([code](https://github.com/timeo-rxl/rallyo-landing))
+
 Rallyo (Nexus) — the social sports orchestrator for students.
 3rd place, 54H Start-Up (HEC Montréal).
 
